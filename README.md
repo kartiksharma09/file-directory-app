@@ -1,4 +1,4 @@
-## Instructions for contributors:
+## Instructions for setup:
 
 ### :computer: How to run the project:
 
