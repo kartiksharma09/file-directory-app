@@ -2,7 +2,6 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const mongoose = require('mongoose');
-const keys = require('./config/keys');
 
 require('./models/User');
 require('./models/Folder');
@@ -11,7 +10,7 @@ require('./models/File');
 // creates temp user and root folder
 require('./models/init');
 
-mongoose.connect(keys.mongoURI,{ useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect(process.env.MONGO_URI,{ useNewUrlParser: true, useUnifiedTopology: true });
 const app = express();
 app.use(cors());
 app.use(bodyParser.json());
